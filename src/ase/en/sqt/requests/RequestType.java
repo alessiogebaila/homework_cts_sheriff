@@ -1,4 +1,4 @@
-package ase.en.sqt.enums;
+package ase.en.sqt.requests;
 
 public enum RequestType {
     REGULAR,

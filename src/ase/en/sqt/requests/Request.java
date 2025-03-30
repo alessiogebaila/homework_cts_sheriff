@@ -1,20 +1,14 @@
-package ase.en.sqt.models;
-
-import ase.en.sqt.enums.RequestType;
+package ase.en.sqt.requests;
 
 public class Request {
-    private String id;
     private String description;
     private RequestType type;
+    private String dispatcherId;
 
-    public Request(String id, String description, RequestType type) {
-        this.id = id;
+    public Request(String description, RequestType type, String dispatcherId) {
         this.description = description;
         this.type = type;
-    }
-
-    public String getId() {
-        return id;
+        this.dispatcherId = dispatcherId;
     }
 
     public String getDescription() {
@@ -29,12 +23,16 @@ public class Request {
         this.type = type;
     }
 
+    public String getDispatcherId() {
+        return dispatcherId;
+    }
+
     @Override
     public String toString() {
         return "Request{" +
-                "id='" + id + '\'' +
-                ", description='" + description + '\'' +
+                "description='" + description + '\'' +
                 ", type=" + type +
+                ", dispatcherId='" + dispatcherId + '\'' +
                 '}';
     }
 }

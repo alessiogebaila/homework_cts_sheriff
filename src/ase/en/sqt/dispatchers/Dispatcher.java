@@ -1,6 +1,6 @@
-package ase.en.sqt.models;
+package ase.en.sqt.dispatchers;
 
-import ase.en.sqt.enums.RequestType;
+import ase.en.sqt.requests.RequestType;
 
 public abstract class Dispatcher {
     protected String id;
