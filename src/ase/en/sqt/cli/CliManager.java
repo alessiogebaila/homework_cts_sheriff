@@ -8,7 +8,8 @@ public class CliManager {
     private Sheriff sheriff;
     private final DispatcherManager dispatcherManager;
     private final MainMenuHandler mainMenuHandler;
-
+    private final DispatcherMenuHandler dispatcherMenuHandler;
+    private final RequestMenuHandler requestMenuHandler;
 
     public CliManager(Sheriff sheriff, DispatcherManager dispatcherManager) {
         this.sheriff = sheriff;
@@ -16,7 +17,8 @@ public class CliManager {
         this.scanner = new Scanner(System.in);
 
         this.mainMenuHandler = new MainMenuHandler(this);
-
+        this.dispatcherMenuHandler = new DispatcherMenuHandler(this);
+        this.requestMenuHandler = new RequestMenuHandler(this);
     }
 
     public void start() {
@@ -57,7 +59,13 @@ public class CliManager {
         return mainMenuHandler;
     }
 
+    public DispatcherMenuHandler getDispatcherMenuHandler() {
+        return dispatcherMenuHandler;
+    }
 
+    public RequestMenuHandler getRequestMenuHandler() {
+        return requestMenuHandler;
+    }
 
     public int getIntInput() {
         try {

@@ -1,6 +1,9 @@
 package ase.en.sqt.cli;
 
+import ase.en.sqt.manager.DispatcherManager;
 import ase.en.sqt.sheriff.Sheriff;
+
+import java.util.Scanner;
 
 public class MainMenuHandler {
     private final CliManager cliManager;
@@ -62,4 +65,33 @@ public class MainMenuHandler {
         System.out.println("Sheriff created successfully: " + sheriff);
     }
 
+    private void runDispatcherMenu() {
+        boolean submenuRunning = true;
+
+        while (submenuRunning) {
+            cliManager.getDispatcherMenuHandler().displayMenu();
+            int choice = cliManager.getIntInput();
+
+            if (choice == 0) {
+                submenuRunning = false;
+            } else {
+                cliManager.getDispatcherMenuHandler().handleChoice(choice);
+            }
+        }
+    }
+
+    private void runRequestMenu() {
+        boolean submenuRunning = true;
+
+        while (submenuRunning) {
+            cliManager.getRequestMenuHandler().displayMenu();
+            int choice = cliManager.getIntInput();
+
+            if (choice == 0) {
+                submenuRunning = false;
+            } else {
+                cliManager.getRequestMenuHandler().handleChoice(choice);
+            }
+        }
+    }
 }

@@ -7,4 +7,5 @@ public class RegularDispatcher extends AbstractDispatcher{
         super(id, address);
         this.requestType = RequestType.REGULAR;
     }
+
 }
